@@ -1,10 +1,29 @@
-[gd_scene load_steps=4 format=3 uid="uid://diacj6ghjhr3u"]
+[gd_scene load_steps=7 format=3 uid="uid://diacj6ghjhr3u"]
 
 [ext_resource type="TileSet" uid="uid://cvxcyvea8m57s" path="res://tile_maps/grassland.tres" id="1_tbfs4"]
-[ext_resource type="PackedScene" uid="uid://dvrkea3u7ncpo" path="res://actors/cherry.tscn" id="1_umix3"]
+[ext_resource type="PackedScene" uid="uid://dvrkea3u7ncpo" path="res://actors/player.tscn" id="1_umix3"]
+[ext_resource type="Script" uid="uid://da3liwlbr7cqw" path="res://scripts/player_controls.gd" id="3_viyde"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tbfs4"]
 size = Vector2(1168, 20)
+
+[sub_resource type="Resource" id="Resource_3hl4r"]
+script = ExtResource("3_viyde")
+player_index = 0
+move_left = "p1_ui_move_left"
+move_right = "p1_ui_move_right"
+jump = "p1_ui_move_jump"
+action = "p1_ui_action"
+metadata/_custom_type_script = "uid://da3liwlbr7cqw"
+
+[sub_resource type="Resource" id="Resource_7ab5j"]
+script = ExtResource("3_viyde")
+player_index = 1
+move_left = "p2_ui_move_left"
+move_right = "p2_ui_move_right"
+jump = "p2_ui_move_jump"
+action = "p2_ui_action"
+metadata/_custom_type_script = "uid://da3liwlbr7cqw"
 
 [node name="world-1" type="Node"]
 
@@ -14,18 +33,19 @@ size = Vector2(1168, 20)
 tile_set = ExtResource("1_tbfs4")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-visible = false
 position = Vector2(580, 305)
 shape = SubResource("RectangleShape2D_tbfs4")
 
-[node name="Cherry" parent="." instance=ExtResource("1_umix3")]
-visible = false
-position = Vector2(28, 284)
-
 [node name="Camera2D" type="Camera2D" parent="."]
-visible = false
-position = Vector2(150, 224)
+position = Vector2(253, 210)
 zoom = Vector2(3.75, 3.75)
+
+[node name="Player" parent="." instance=ExtResource("1_umix3")]
+position = Vector2(186, 275)
+controls = SubResource("Resource_3hl4r")
+
+[node name="Player2" parent="." instance=ExtResource("1_umix3")]
+position = Vector2(110, 270)
+controls = SubResource("Resource_7ab5j")
