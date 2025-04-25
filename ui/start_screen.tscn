@@ -1,0 +1,89 @@
+[gd_scene load_steps=4 format=3 uid="uid://wx806xhvycss"]
+
+[ext_resource type="FontFile" uid="uid://gdd8ioghdb38" path="res://fonts/Daydream.ttf" id="1_s6cxg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_50anp"]
+bg_color = Color(0.722274, 0.433513, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s6cxg"]
+bg_color = Color(0.937255, 0.858824, 0, 1)
+border_color = Color(0, 0.911367, 0.925102, 1)
+shadow_color = Color(0.246201, 0.0289104, 0.260038, 0.6)
+
+[node name="StartScreen" type="CanvasLayer"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1145.0
+offset_bottom = 642.0
+color = Color(0.999999, 0.933, 0.701356, 1)
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -124.0
+offset_right = 236.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.933002, 0.800967, 0.169688, 1)
+theme_override_colors/font_shadow_color = Color(0.467494, 0.40888, 0, 1)
+theme_override_colors/font_outline_color = Color(0.336896, 0.196832, 0.038686, 1)
+theme_override_constants/shadow_offset_x = -6
+theme_override_constants/shadow_offset_y = 6
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("1_s6cxg")
+theme_override_font_sizes/font_size = 50
+text = "BANANA
+Brothers"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StartButton" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = 38.0
+offset_right = 181.0
+offset_bottom = 121.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 20
+theme_override_styles/hover = SubResource("StyleBoxFlat_50anp")
+theme_override_styles/normal = SubResource("StyleBoxFlat_s6cxg")
+text = "JOGAR"
+
+[node name="CreditsButton" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -154.0
+offset_top = 133.0
+offset_right = 6.0
+offset_bottom = 193.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "CRÉDITOS"
+
+[node name="ExitButton" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 20.0
+offset_top = 132.0
+offset_right = 180.0
+offset_bottom = 192.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "SAIR"
