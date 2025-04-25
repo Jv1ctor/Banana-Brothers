@@ -28,28 +28,28 @@ func handle_player_move(delta):
 			
 			if Input.is_action_just_pressed(controls.jump) and is_on_floor():
 				_set_state(State.jump)
-			elif not is_on_floor():
-				_set_state(State.fall)
+			#elif not is_on_floor():
+				#_set_state(State.fall)
 		State.run:
 			velocity.x = direction * SPEED
 			
 			if Input.is_action_just_pressed(controls.jump) and is_on_floor():
 				_set_state(State.jump)
-			elif not is_on_floor():
-				_set_state(State.fall)
+			#elif not is_on_floor():
+				#_set_state(State.fall)
 		State.jump:				
 			velocity.y = JUMP_VELOCITY
 			_set_state(State.fall)
-			
-			
+						
 		State.stopping:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 			_set_state(State.idle)
 		
 		State.fall:
-			velocity += get_gravity() * delta
-			if is_on_floor():
-				_set_state(State.idle)
+			_set_state(State.idle)
+			#velocity += get_gravity() * delta
+			#if is_on_floor():
+				#_set_state(State.idle)
 			
 			
 	animated_sprite_2d.trigger_animation(velocity, direction)
@@ -57,8 +57,8 @@ func handle_player_move(delta):
 
 func _physics_process(delta: float) -> void:	
 	## Gavidade aplicada
-	#if not is_on_floor():
-		#velocity += get_gravity() * delta
+	if not is_on_floor():
+		velocity += get_gravity() * delta
 	
 	handle_player_move(delta)
 	
