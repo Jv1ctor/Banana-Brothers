@@ -79,6 +79,8 @@ p2_ui_action={
 2d_render/layer_4="obstacle"
 2d_render/layer_5="itens"
 2d_render/layer_6="misc"
+2d_physics/layer_1="players"
+2d_physics/layer_3="ground"
 
 [rendering]
 
