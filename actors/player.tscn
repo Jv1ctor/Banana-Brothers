@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=3 uid="uid://dvrkea3u7ncpo"]
 
-[ext_resource type="Script" path="res://scripts/player.gd" id="1_fkmo6"]
+[ext_resource type="Script" uid="uid://drxf7t4ywolhf" path="res://scripts/player.gd" id="1_fkmo6"]
 [ext_resource type="Texture2D" uid="uid://b87fmjok5iki8" path="res://assets/sprites/Barry Cherry/Idle (32 x 32).png" id="1_xd58v"]
 [ext_resource type="Texture2D" uid="uid://bchirf65otip6" path="res://assets/sprites/Barry Cherry/Running (32 x 32).png" id="2_wrwfl"]
 [ext_resource type="Script" uid="uid://dvqargt2chima" path="res://scripts/switch_animation.gd" id="4_fkmo6"]
