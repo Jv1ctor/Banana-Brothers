@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://diacj6ghjhr3u"]
+[gd_scene load_steps=8 format=3 uid="uid://diacj6ghjhr3u"]
 
 [ext_resource type="TileSet" uid="uid://cvxcyvea8m57s" path="res://tile_maps/grassland.tres" id="1_tbfs4"]
 [ext_resource type="PackedScene" uid="uid://dvrkea3u7ncpo" path="res://actors/player.tscn" id="1_umix3"]
 [ext_resource type="Script" uid="uid://da3liwlbr7cqw" path="res://scripts/player_controls.gd" id="3_viyde"]
+[ext_resource type="PackedScene" uid="uid://bptxut7ia16xu" path="res://obstacles/puzzle.tscn" id="4_3hl4r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tbfs4"]
 size = Vector2(1168, 20)
@@ -49,3 +50,6 @@ controls = SubResource("Resource_3hl4r")
 [node name="Player2" parent="." instance=ExtResource("1_umix3")]
 position = Vector2(110, 270)
 controls = SubResource("Resource_7ab5j")
+
+[node name="Puzzle" parent="." instance=ExtResource("4_3hl4r")]
+position = Vector2(230, 285)
