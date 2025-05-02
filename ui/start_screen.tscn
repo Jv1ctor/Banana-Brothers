@@ -1,21 +1,67 @@
-[gd_scene load_steps=4 format=3 uid="uid://wx806xhvycss"]
+[gd_scene load_steps=8 format=3 uid="uid://wx806xhvycss"]
 
+[ext_resource type="Texture2D" uid="uid://cldvukwapphkj" path="res://ui/550c5f5d-c637-4259-98e1-a38cea04b241.png" id="1_50anp"]
+[ext_resource type="Script" uid="uid://chendkgqmqo01" path="res://scripts/start_screen.gd" id="1_nledq"]
 [ext_resource type="FontFile" uid="uid://gdd8ioghdb38" path="res://fonts/Daydream.ttf" id="1_s6cxg"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nledq"]
+bg_color = Color(0.945098, 0.662745, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.517647, 0.305882, 0.0784314, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_50anp"]
-bg_color = Color(0.722274, 0.433513, 0, 1)
+bg_color = Color(0.945098, 0.662745, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.517647, 0.305882, 0.0784314, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_igmpp"]
+bg_color = Color(0.6, 0, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.517647, 0.305882, 0.0784314, 0)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s6cxg"]
-bg_color = Color(0.937255, 0.858824, 0, 1)
-border_color = Color(0, 0.911367, 0.925102, 1)
+bg_color = Color(0.819608, 0.505882, 0, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.517647, 0.305882, 0.0784314, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 shadow_color = Color(0.246201, 0.0289104, 0.260038, 0.6)
 
-[node name="StartScreen" type="CanvasLayer"]
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_nledq")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_right = 1145.0
-offset_bottom = 642.0
-color = Color(0.999999, 0.933, 0.701356, 1)
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -3.0
+offset_top = -378.0
+offset_right = 1156.0
+offset_bottom = 646.0
+texture = ExtResource("1_50anp")
 
 [node name="Label" type="Label" parent="."]
 anchors_preset = 8
@@ -23,21 +69,21 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -200.0
-offset_top = -124.0
-offset_right = 236.0
-offset_bottom = 13.0
+offset_left = 120.0
+offset_top = 61.0
+offset_right = 995.0
+offset_bottom = 336.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0.933002, 0.800967, 0.169688, 1)
-theme_override_colors/font_shadow_color = Color(0.467494, 0.40888, 0, 1)
-theme_override_colors/font_outline_color = Color(0.336896, 0.196832, 0.038686, 1)
+theme_override_colors/font_shadow_color = Color(0.49826, 0.30005, 0, 1)
+theme_override_colors/font_outline_color = Color(0.331999, 0.193685, 0.037534, 1)
 theme_override_constants/shadow_offset_x = -6
 theme_override_constants/shadow_offset_y = 6
 theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("1_s6cxg")
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 65
 text = "BANANA
 Brothers"
 horizontal_alignment = 1
@@ -49,30 +95,25 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -150.0
-offset_top = 38.0
-offset_right = 181.0
-offset_bottom = 121.0
+offset_left = 394.0
+offset_top = 319.0
+offset_right = 725.0
+offset_bottom = 402.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 20
+theme_override_colors/font_hover_pressed_color = Color(0.854902, 0.745098, 0, 1)
+theme_override_colors/font_hover_color = Color(0.856627, 0.745837, 0, 1)
+theme_override_colors/font_outline_color = Color(0.35326, 0.20657, 0, 1)
+theme_override_colors/font_focus_color = Color(0.854902, 0.745098, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.854902, 0.745098, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("1_s6cxg")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxFlat_nledq")
 theme_override_styles/hover = SubResource("StyleBoxFlat_50anp")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_igmpp")
 theme_override_styles/normal = SubResource("StyleBoxFlat_s6cxg")
 text = "JOGAR"
-
-[node name="CreditsButton" type="Button" parent="."]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -154.0
-offset_top = 133.0
-offset_right = 6.0
-offset_bottom = 193.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "CRÉDITOS"
 
 [node name="ExitButton" type="Button" parent="."]
 anchors_preset = 8
@@ -80,10 +121,52 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 20.0
-offset_top = 132.0
-offset_right = 180.0
-offset_bottom = 192.0
+offset_left = 564.0
+offset_top = 414.0
+offset_right = 724.0
+offset_bottom = 472.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_hover_pressed_color = Color(0.854902, 0.745098, 0, 1)
+theme_override_colors/font_hover_color = Color(0.856627, 0.745837, 0, 1)
+theme_override_colors/font_outline_color = Color(0.352941, 0.207843, 0, 1)
+theme_override_colors/font_focus_color = Color(0.854902, 0.745098, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.854902, 0.745098, 0, 1)
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("1_s6cxg")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/focus = SubResource("StyleBoxFlat_nledq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_50anp")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_igmpp")
+theme_override_styles/normal = SubResource("StyleBoxFlat_s6cxg")
 text = "SAIR"
+
+[node name="CreditsButton" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 390.0
+offset_top = 415.0
+offset_right = 550.0
+offset_bottom = 473.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_hover_pressed_color = Color(0.854902, 0.745098, 0, 1)
+theme_override_colors/font_hover_color = Color(0.856627, 0.745837, 0, 1)
+theme_override_colors/font_outline_color = Color(0.352941, 0.207843, 0, 1)
+theme_override_colors/font_focus_color = Color(0.854902, 0.745098, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.854902, 0.745098, 0, 1)
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("1_s6cxg")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/focus = SubResource("StyleBoxFlat_nledq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_50anp")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_igmpp")
+theme_override_styles/normal = SubResource("StyleBoxFlat_s6cxg")
+text = "CREDITOS"
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="CreditsButton" to="." method="_on_credits_button_pressed"]
