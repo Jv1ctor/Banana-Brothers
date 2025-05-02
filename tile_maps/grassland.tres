@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=11 format=3 uid="uid://cvxcyvea8m57s"]
+[gd_resource type="TileSet" load_steps=12 format=3 uid="uid://cvxcyvea8m57s"]
 
 [ext_resource type="Texture2D" uid="uid://ks5imw0ifisc" path="res://assets/sprites/Seasonal Tilesets/1 - Grassland/Terrain (16 x 16).png" id="1_ws4wo"]
 [ext_resource type="Texture2D" uid="uid://bmh5gftkyr302" path="res://assets/sprites/Seasonal Tilesets/1 - Grassland/Grassland_entities (16 x 16).png" id="2_r85ku"]
@@ -15,6 +15,9 @@ tile_data = PackedInt32Array(0, 589826, 3, 1, 655362, 3, 2, 851970, 3)
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_kh4nv"]
 tile_data = PackedInt32Array(0, 917507, 4, 65536, 917507, 5, 1, 983043, 4, 2, 1048579, 4, 65538, 1048579, 5, 3, 1114115, 4, 4, 1179651, 4, 65540, 1179651, 5)
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_vbwiw"]
+tile_data = PackedInt32Array(0, 589826, 3, 1, 655362, 3, 2, 851970, 3)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kh4nv"]
 texture = ExtResource("1_ws4wo")
@@ -133,3 +136,4 @@ pattern_0 = SubResource("TileMapPattern_ws4wo")
 pattern_1 = SubResource("TileMapPattern_r85ku")
 pattern_2 = SubResource("TileMapPattern_m8mie")
 pattern_3 = SubResource("TileMapPattern_kh4nv")
+pattern_4 = SubResource("TileMapPattern_vbwiw")
