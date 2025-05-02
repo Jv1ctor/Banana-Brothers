@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+class_name Player
+
 @export var controls: PlayerControls = null
 const SPEED = 100.0
 const JUMP_VELOCITY = -400.0

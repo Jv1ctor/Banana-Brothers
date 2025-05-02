@@ -8,23 +8,34 @@ const WAIT_DURATION = 1
 @export var distance = 192
 @export var moving_horizontal = true
 
-var follow = Vector2.ZERO
-var platform_center = 16
+var start_position: Vector2
+var end_position: Vector2
+var going_forward = true
+var is_on = false
+var wait_timer = 0.0
+
+func setOn() -> void:
+	is_on = true 
+
+func setOff() -> void:
+	is_on = false
 
 func _ready() -> void:
-	move_platform()
-	
-func _physics_process(delta: float) -> void:
-	platform.position = platform.position.lerp(follow, .5)
-	
-func move_platform():
-	var move_direction = Vector2.RIGHT * distance if moving_horizontal else Vector2.UP * distance
-	var duration = move_direction.length() / float(move_speed * platform_center)
-	
-	var plataform_tween = create_tween().set_loops().set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN_OUT)
-	
-	plataform_tween.tween_property(self, "follow", move_direction, duration).set_delay(WAIT_DURATION)
-	plataform_tween.tween_property(self, "follow", Vector2.ZERO, duration).set_delay(duration + WAIT_DURATION * 2)
+	start_position = platform.position
+	var direction = Vector2.RIGHT if moving_horizontal else Vector2.UP
+	end_position = start_position + direction * distance
 
-	
-	
+func _physics_process(delta: float) -> void:
+	if not is_on:
+		return
+
+	if wait_timer > 0:
+		wait_timer -= delta
+		return
+
+	var target = end_position if going_forward else start_position
+	platform.position = platform.position.move_toward(target, move_speed)
+
+	if platform.position == target:
+		going_forward = !going_forward
+		wait_timer = WAIT_DURATION
