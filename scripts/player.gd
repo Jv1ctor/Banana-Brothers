@@ -5,7 +5,6 @@ const SPEED = 100.0
 const JUMP_VELOCITY = -400.0
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D as SwicthAnimation
-
 enum State { idle, run, stopping, jump, fall }
 
 var _current_state = State.idle

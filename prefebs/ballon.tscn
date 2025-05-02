@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://buclgb6lbivcu"]
+
+[ext_resource type="Script" uid="uid://qtti446tw7fq" path="res://scripts/ballon.gd" id="1_0b4ph"]
+[ext_resource type="Texture2D" uid="uid://nwcewt1t1l8c" path="res://assets/sprites/Mini FX, Items & UI/Common Pick-ups/4 - Ballooney_Flying (32 x 32).png" id="1_8coqw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0b4ph"]
+atlas = ExtResource("1_8coqw")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_prc0n"]
+atlas = ExtResource("1_8coqw")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_25xt1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0b4ph")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_prc0n")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p6ygb"]
+size = Vector2(22, 32)
+
+[node name="ballon" type="Area2D"]
+script = ExtResource("1_0b4ph")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, -1)
+sprite_frames = SubResource("SpriteFrames_25xt1")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.0293473
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -1)
+shape = SubResource("RectangleShape2D_p6ygb")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
