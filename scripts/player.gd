@@ -12,9 +12,12 @@ enum State { idle, run, stopping, jump, fall }
 var _current_state = State.idle
 
 func _set_state(newState: State):
+	#var before_state = _current_state
 	if newState == _current_state:
 		return
 	_current_state = newState
+	
+	
 		
 
 func handle_player_move(delta):
@@ -40,11 +43,15 @@ func handle_player_move(delta):
 				#_set_state(State.fall)
 		State.jump:				
 			velocity.y = JUMP_VELOCITY
-			_set_state(State.fall)
+			
+			if not is_on_floor():
+				_set_state(State.fall)
 						
 		State.stopping:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
-			_set_state(State.idle)
+			
+			if velocity.x == 0:
+				_set_state(State.idle)
 		
 		State.fall:
 			_set_state(State.idle)
@@ -52,8 +59,8 @@ func handle_player_move(delta):
 			#if is_on_floor():
 				#_set_state(State.idle)
 			
-			
-	animated_sprite_2d.trigger_animation(velocity, direction)
+	print(_current_state)
+	animated_sprite_2d.trigger_animation(velocity, direction, _current_state)
 			
 
 func _physics_process(delta: float) -> void:	
