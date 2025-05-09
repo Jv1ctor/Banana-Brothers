@@ -5,7 +5,8 @@ extends Node2D
 
 @export_multiline var text = ""
 @export var spacing = 0
- 
+@export var npc_id: String = ""
+
 var lines: Array[String] = []
 var _is_player_in_area = false
 func _ready():
@@ -46,7 +47,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			and !DialogManager.is_message_active:
 			
 			texture.hide()
-			DialogManager.start_message(global_position + Vector2(0, -50), lines)
+			DialogManager.start_message(global_position + Vector2(0, -50), lines, npc_id)
 	else:
 		texture.hide()
 		

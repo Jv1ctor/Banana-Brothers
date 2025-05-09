@@ -117,6 +117,7 @@ position = Vector2(2082, 425)
 position = Vector2(0, -52)
 text = "Parabens meus filhos! Vocês ganharam um presente muito especial."
 spacing = 40
+npc_id = "mamae_nana"
 
 [node name="orangeNpc" parent="." instance=ExtResource("7_1jfbe")]
 position = Vector2(961, 430)
