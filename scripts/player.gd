@@ -3,6 +3,7 @@ extends CharacterBody2D
 class_name Player
 
 @export var controls: PlayerControls = null
+@export var texture: SpriteFrames = null
 const SPEED = 100.0
 const JUMP_VELOCITY = -400.0
 
@@ -11,14 +12,15 @@ enum State { idle, run, stopping, jump, fall }
 
 var _current_state = State.idle
 
+func _ready() -> void:
+	animated_sprite_2d.sprite_frames = texture
+
 func _set_state(newState: State):
 	#var before_state = _current_state
 	if newState == _current_state:
 		return
 	_current_state = newState
-	
-	
-		
+
 
 func handle_player_move(delta):
 	var direction := Input.get_axis(controls.move_left, controls.move_right)
