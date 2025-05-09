@@ -15,6 +15,10 @@ run/main_scene="uid://cc3ryhel288iq"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+DialogManager="*res://singleton/dialog_manager.gd"
+
 [display]
 
 window/size/resizable=false
