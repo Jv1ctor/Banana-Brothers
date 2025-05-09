@@ -59,7 +59,7 @@ func handle_player_move(delta):
 			#if is_on_floor():
 				#_set_state(State.idle)
 			
-	print(_current_state)
+	#print(_current_state)
 	animated_sprite_2d.trigger_animation(velocity, direction, _current_state)
 			
 

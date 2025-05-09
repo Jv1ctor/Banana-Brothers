@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://da3liwlbr7cqw" path="res://scripts/player_controls.gd" id="3_viyde"]
 [ext_resource type="Texture2D" uid="uid://dc8ikqnvo768l" path="res://assets/sprites/Seasonal Tilesets/1 - Grassland/Background parts/5 - Sky_color.png" id="4_3hl4r"]
 [ext_resource type="Script" uid="uid://db5mcokvl63h5" path="res://scripts/multicamera.gd" id="4_8f4wj"]
-[ext_resource type="PackedScene" path="res://prefebs/puzzle.tscn" id="4_hclqf"]
+[ext_resource type="PackedScene" uid="uid://cwujg3fjbdmfh" path="res://prefebs/button.tscn" id="4_hclqf"]
 [ext_resource type="Texture2D" uid="uid://c0anqy7ytfosb" path="res://assets/sprites/Seasonal Tilesets/1 - Grassland/Background parts/4 - Cloud_cover_2.png" id="5_bx18w"]
 [ext_resource type="Shader" uid="uid://hbort3oonugk" path="res://shaders/clouds.gdshader" id="6_8f4wj"]
 [ext_resource type="Texture2D" uid="uid://c050r4k6h7rvs" path="res://assets/sprites/Seasonal Tilesets/1 - Grassland/Background parts/3 - Cloud_cover_1.png" id="6_xpxyj"]
@@ -69,6 +69,7 @@ distance = 100
 
 [node name="Puzzle-1" parent="platforms2" instance=ExtResource("4_hclqf")]
 position = Vector2(903, 361)
+colorBtn = "red"
 
 [node name="Puzzle-2" parent="platforms2" instance=ExtResource("4_hclqf")]
 position = Vector2(1714, 313)
@@ -83,6 +84,7 @@ moving_horizontal = false
 
 [node name="Puzzle-1" parent="platforms3" instance=ExtResource("4_hclqf")]
 position = Vector2(998, 330)
+colorBtn = "green"
 
 [node name="Puzzle-2" parent="platforms3" instance=ExtResource("4_hclqf")]
 position = Vector2(1648, 361)

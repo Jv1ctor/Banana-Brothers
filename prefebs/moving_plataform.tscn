@@ -1,11 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://s7fb1q72cpfi"]
+[gd_scene load_steps=4 format=3 uid="uid://s7fb1q72cpfi"]
 
 [ext_resource type="Script" uid="uid://olw6f6e3a4sx" path="res://scripts/moving_plataform.gd" id="1_44j83"]
-[ext_resource type="Texture2D" uid="uid://bo7wejba5bbea" path="res://assets/sprites/Seasonal Tilesets/5 - Misc. universal tiles/Blocks (16 x 16).png" id="2_dgg34"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_uvd35"]
-atlas = ExtResource("2_dgg34")
-region = Rect2(96, 64, 32, 16)
+[ext_resource type="Texture2D" uid="uid://dp85wgg7lotnt" path="res://texture/moving_plataform_normal.tres" id="2_44j83"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gkucu"]
 size = Vector2(32, 16)
@@ -17,7 +13,7 @@ script = ExtResource("1_44j83")
 collision_layer = 4
 
 [node name="Sprite2D" type="Sprite2D" parent="platform"]
-texture = SubResource("AtlasTexture_uvd35")
+texture = ExtResource("2_44j83")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="platform"]
 shape = SubResource("RectangleShape2D_gkucu")
