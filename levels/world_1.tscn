@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://diacj6ghjhr3u"]
+[gd_scene load_steps=22 format=4 uid="uid://diacj6ghjhr3u"]
 
 [ext_resource type="Script" uid="uid://cidjk186gmigv" path="res://scripts/world_1.gd" id="1_4aspj"]
 [ext_resource type="TileSet" uid="uid://cvxcyvea8m57s" path="res://tile_maps/grassland.tres" id="1_tbfs4"]
@@ -13,8 +13,11 @@
 [ext_resource type="Texture2D" uid="uid://c050r4k6h7rvs" path="res://assets/sprites/Seasonal Tilesets/1 - Grassland/Background parts/3 - Cloud_cover_1.png" id="6_xpxyj"]
 [ext_resource type="Texture2D" uid="uid://cgobc00cxpckg" path="res://assets/sprites/Seasonal Tilesets/1 - Grassland/Background parts/2 - Hills.png" id="7_8f4wj"]
 [ext_resource type="Texture2D" uid="uid://s0miahotk7jt" path="res://assets/sprites/Seasonal Tilesets/1 - Grassland/Background parts/1 - Foreground_scenery.png" id="8_4aspj"]
+[ext_resource type="SpriteFrames" uid="uid://cq04vwnfkexsh" path="res://texture/playerNanica.tres" id="9_1qaao"]
+[ext_resource type="SpriteFrames" uid="uid://cgxwam7vtisj7" path="res://texture/playerPratinha.tres" id="10_uc2ke"]
 [ext_resource type="PackedScene" uid="uid://buclgb6lbivcu" path="res://prefebs/ballon.tscn" id="13_thqsu"]
 [ext_resource type="PackedScene" uid="uid://d2tdoqvl88i1f" path="res://prefebs/puzzle_move_platform.tscn" id="15_rsm41"]
+[ext_resource type="PackedScene" uid="uid://bf5lemtiuyq64" path="res://actors/mamaeNana.tscn" id="18_uc2ke"]
 
 [sub_resource type="Resource" id="Resource_7ab5j"]
 script = ExtResource("3_viyde")
@@ -64,10 +67,8 @@ position = Vector2(11, -70)
 [node name="moving_platform11" parent="puzzle_move_platform" instance=ExtResource("3_6r8k1")]
 position = Vector2(-60, 45)
 scale = Vector2(1, 0.993852)
-move_speed = 3
 distance = 90
 moving_horizontal = false
-invert_direction = false
 
 [node name="puzzle_move_platform2" parent="." node_paths=PackedStringArray("button1Platform", "button2Platform", "platform") instance=ExtResource("15_rsm41")]
 position = Vector2(1369, 241)
@@ -86,7 +87,6 @@ position = Vector2(115, -73)
 position = Vector2(94, 14)
 move_speed = 1
 distance = 80
-moving_horizontal = true
 invert_direction = true
 
 [node name="puzzle_move_platform3" parent="." node_paths=PackedStringArray("button1Platform", "button2Platform", "platform") instance=ExtResource("15_rsm41")]
@@ -112,11 +112,14 @@ position = Vector2(1317, 77)
 position = Vector2(923, 424)
 collision_mask = 5
 controls = SubResource("Resource_7ab5j")
+texture = ExtResource("9_1qaao")
 
 [node name="Player" parent="." instance=ExtResource("1_umix3")]
 position = Vector2(975, 397)
+scale = Vector2(0.915753, 0.915753)
 collision_mask = 5
 controls = SubResource("Resource_3hl4r")
+texture = ExtResource("10_uc2ke")
 
 [node name="Camera" type="Camera2D" parent="."]
 position = Vector2(204, 378)
@@ -189,3 +192,6 @@ position = Vector2(-2, 40)
 scale = Vector2(2, 2)
 texture = ExtResource("8_4aspj")
 centered = false
+
+[node name="MamaeNana" parent="." instance=ExtResource("18_uc2ke")]
+position = Vector2(2082, 425)

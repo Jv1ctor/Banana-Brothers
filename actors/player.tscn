@@ -1,57 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://dvrkea3u7ncpo"]
+[gd_scene load_steps=5 format=3 uid="uid://dvrkea3u7ncpo"]
 
 [ext_resource type="Script" uid="uid://drxf7t4ywolhf" path="res://scripts/player.gd" id="1_fkmo6"]
-[ext_resource type="Texture2D" uid="uid://w16rjbxyv4au" path="res://assets/sprites/Bananas/idle/idleOne.png" id="2_ua707"]
-[ext_resource type="Texture2D" uid="uid://culbh8uq77mol" path="res://assets/sprites/Bananas/idle/idleOneBlinking1.png" id="3_rkwqa"]
-[ext_resource type="Texture2D" uid="uid://bhqnn1cidnrjx" path="res://assets/sprites/Bananas/jumping/jumpingOne.png" id="4_41w2c"]
+[ext_resource type="SpriteFrames" uid="uid://cgxwam7vtisj7" path="res://texture/playerPratinha.tres" id="2_1yqc4"]
 [ext_resource type="Script" uid="uid://dvqargt2chima" path="res://scripts/switch_animation.gd" id="4_fkmo6"]
-[ext_resource type="Texture2D" uid="uid://c8bmcbtldwsf4" path="res://assets/sprites/Bananas/jumping/jumpingTwo.png" id="5_5nkr1"]
-[ext_resource type="Texture2D" uid="uid://dyh6wetc2ckra" path="res://assets/sprites/Bananas/run/banana_run.png" id="6_31m4k"]
-[ext_resource type="Texture2D" uid="uid://bsclxs56bgs01" path="res://assets/sprites/Bananas/run/banana_run2.png" id="7_opp7g"]
-[ext_resource type="Texture2D" uid="uid://dbu17hnrei1v4" path="res://assets/sprites/Bananas/run/banana_run3.png" id="8_jglmw"]
-[ext_resource type="Texture2D" uid="uid://djxm00erpfkon" path="res://assets/sprites/Bananas/run/banana_run4.png" id="9_bncfn"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_1eyqu"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_ua707")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_rkwqa")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 2.5
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("4_41w2c")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_5nkr1")
-}],
-"loop": true,
-"name": &"jump",
-"speed": 4.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("6_31m4k")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_opp7g")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_jglmw")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_bncfn")
-}],
-"loop": true,
-"name": &"run",
-"speed": 7.0
-}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bygls"]
 size = Vector2(18.5, 32)
@@ -61,10 +12,8 @@ script = ExtResource("1_fkmo6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -16)
-sprite_frames = SubResource("SpriteFrames_1eyqu")
+sprite_frames = ExtResource("2_1yqc4")
 animation = &"jump"
-autoplay = "jump"
-frame_progress = 0.0792242
 script = ExtResource("4_fkmo6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

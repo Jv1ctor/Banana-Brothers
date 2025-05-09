@@ -1,0 +1,52 @@
+[gd_resource type="SpriteFrames" load_steps=9 format=3 uid="uid://cq04vwnfkexsh"]
+
+[ext_resource type="Texture2D" uid="uid://w16rjbxyv4au" path="res://assets/sprites/Bananas/idle/idleOne.png" id="1_ps0fr"]
+[ext_resource type="Texture2D" uid="uid://culbh8uq77mol" path="res://assets/sprites/Bananas/idle/idleOneBlinking1.png" id="2_s165r"]
+[ext_resource type="Texture2D" uid="uid://bhqnn1cidnrjx" path="res://assets/sprites/Bananas/jumping/jumpingOne.png" id="3_jq1ut"]
+[ext_resource type="Texture2D" uid="uid://c8bmcbtldwsf4" path="res://assets/sprites/Bananas/jumping/jumpingTwo.png" id="4_msypo"]
+[ext_resource type="Texture2D" uid="uid://dyh6wetc2ckra" path="res://assets/sprites/Bananas/run/banana_run.png" id="5_ti5m5"]
+[ext_resource type="Texture2D" uid="uid://bsclxs56bgs01" path="res://assets/sprites/Bananas/run/banana_run2.png" id="6_xhww7"]
+[ext_resource type="Texture2D" uid="uid://dbu17hnrei1v4" path="res://assets/sprites/Bananas/run/banana_run3.png" id="7_lrxo3"]
+[ext_resource type="Texture2D" uid="uid://djxm00erpfkon" path="res://assets/sprites/Bananas/run/banana_run4.png" id="8_g52c1"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 10.0,
+"texture": ExtResource("1_ps0fr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_s165r")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_jq1ut")
+}, {
+"duration": 3.0,
+"texture": ExtResource("4_msypo")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_ti5m5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_xhww7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_lrxo3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_g52c1")
+}],
+"loop": true,
+"name": &"run",
+"speed": 7.0
+}]
