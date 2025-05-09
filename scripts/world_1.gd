@@ -18,20 +18,6 @@ func _ready():
 	
 	
 func _process(delta: float) -> void:
-	if puzzle_1.is_inside or puzzle_return_1.is_inside:
-		moving_platform_1.setOn()
-	else:
-		moving_platform_1.setOff()
-		
-	if puzzle_2.is_inside or puzzle_return_2.is_inside:
-		moving_platform_2.setOn()
-	else:
-		moving_platform_2.setOff()
-		
-	if puzzle_3.is_inside or puzzle_return_3.is_inside:
-		moving_platform_3.setOn()
-	else:
-		moving_platform_3.setOff()
-		
+	pass
 		
 	

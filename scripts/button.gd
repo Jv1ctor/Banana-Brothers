@@ -1,12 +1,16 @@
 extends Area2D
 
+class_name ButtonPlatform
+
 @onready var animated_sprite = $AnimatedSprite2D
 var is_inside = false
 
-@export_enum("red", "blue", "green", "yellow") var colorBtn: String = "blue"
+@onready var colorBtn = (get_parent() as PuzzleMovePlatform).colorTheme if (get_parent() as PuzzleMovePlatform).colorTheme else "blue"
+
 
 func _ready():
-	animated_sprite.play("unpressed_{color}".format({"color": colorBtn}))
+	
+	animated_sprite.play("unpressed_{color}".format({"color": colorBtn }))
 	#print("O script está rodando")
 
 func _on_body_entered(body):
