@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cc3ryhel288iq"]
+[gd_scene load_steps=8 format=3 uid="uid://cugferh2b1cte"]
 
 [ext_resource type="Texture2D" uid="uid://cldvukwapphkj" path="res://ui/550c5f5d-c637-4259-98e1-a38cea04b241.png" id="1_50anp"]
 [ext_resource type="Script" uid="uid://chendkgqmqo01" path="res://scripts/start_screen.gd" id="1_nledq"]
@@ -166,6 +166,8 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_50anp")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_igmpp")
 theme_override_styles/normal = SubResource("StyleBoxFlat_s6cxg")
 text = "CREDITOS"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]
