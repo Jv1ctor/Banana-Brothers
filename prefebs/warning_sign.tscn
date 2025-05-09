@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://cayhx3fnjdnr0"]
+
+[ext_resource type="Script" uid="uid://cl615dkvyw4bb" path="res://scripts/warning_sign.gd" id="1_t01a1"]
+[ext_resource type="Texture2D" uid="uid://cwc2dxci7fm86" path="res://assets/sprites/Mini FX, Items & UI/Mini UI/Speech_Emotes (16 x 16).png" id="2_7ynon"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f0olb"]
+atlas = ExtResource("2_7ynon")
+region = Rect2(-0.0160179, 0, 15.7973, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pmv7f"]
+size = Vector2(37, 58)
+
+[node name="warning_sign" type="Node2D"]
+script = ExtResource("1_t01a1")
+
+[node name="texture" type="Sprite2D" parent="."]
+position = Vector2(0, 4)
+texture = SubResource("AtlasTexture_f0olb")
+
+[node name="Area_sign" type="Area2D" parent="."]
+
+[node name="Collision" type="CollisionShape2D" parent="Area_sign"]
+position = Vector2(1.5, 37)
+shape = SubResource("RectangleShape2D_pmv7f")
+
+[connection signal="body_entered" from="Area_sign" to="." method="_on_area_sign_body_entered"]
+[connection signal="body_exited" from="Area_sign" to="." method="_on_area_sign_body_exited"]
