@@ -1,7 +1,7 @@
 extends Node2D
 
-@export var sound_path: String = "res://sounds/startMusic.mp3"
 @onready var audio_player: AudioStreamPlayer2D = $AudioStreamPlayer2D
+@export var sound_path: String = "res://sounds/startMusic.mp3"
 
 func _ready() -> void:
 	if sound_path != "":
@@ -12,7 +12,7 @@ func _ready() -> void:
 		audio_player.play()
 
 func _on_start_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://levels//world_1.tscn")
+	LoadManager.load_scene("res://levels//world_1.tscn")
 
 
 func _on_exit_button_pressed() -> void:
@@ -20,4 +20,4 @@ func _on_exit_button_pressed() -> void:
 
 
 func _on_credits_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://ui//credits_screen.tscn")
+	LoadManager.load_scene("res://ui//credits_screen.tscn")

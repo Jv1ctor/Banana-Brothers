@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://diacj6ghjhr3u"]
+[gd_scene load_steps=25 format=4 uid="uid://diacj6ghjhr3u"]
 
 [ext_resource type="Script" uid="uid://cidjk186gmigv" path="res://scripts/world_1.gd" id="1_4aspj"]
 [ext_resource type="TileSet" uid="uid://cvxcyvea8m57s" path="res://tile_maps/grassland.tres" id="1_tbfs4"]
@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://d2tdoqvl88i1f" path="res://prefebs/puzzle_move_platform.tscn" id="15_rsm41"]
 [ext_resource type="PackedScene" uid="uid://bf5lemtiuyq64" path="res://actors/mamaeNana.tscn" id="18_uc2ke"]
 [ext_resource type="PackedScene" uid="uid://cayhx3fnjdnr0" path="res://prefebs/warning_sign.tscn" id="19_ivm7e"]
+[ext_resource type="AudioStream" uid="uid://dy6x23dqh5oqw" path="res://sounds/leap.mp3" id="21_qx8j2"]
 
 [sub_resource type="Resource" id="Resource_7ab5j"]
 script = ExtResource("3_viyde")
@@ -128,13 +129,13 @@ text = "Olá, podem me ajudar? Perdi meu balão, ele está muito alto para eu pe
 spacing = 30
 
 [node name="Player2" parent="." instance=ExtResource("1_umix3")]
-position = Vector2(806, 420)
+position = Vector2(1405, 33)
 collision_mask = 5
 controls = SubResource("Resource_7ab5j")
 texture = ExtResource("9_1qaao")
 
 [node name="Player" parent="." instance=ExtResource("1_umix3")]
-position = Vector2(858, 393)
+position = Vector2(1501, 172)
 scale = Vector2(0.915753, 0.915753)
 collision_mask = 5
 controls = SubResource("Resource_3hl4r")
@@ -211,3 +212,8 @@ position = Vector2(-2, 40)
 scale = Vector2(2, 2)
 texture = ExtResource("8_4aspj")
 centered = false
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("21_qx8j2")
+volume_db = -10.0
+autoplay = true

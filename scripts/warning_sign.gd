@@ -35,7 +35,7 @@ func _wrap_text(text: String, max_length: int) -> Array[String]:
 
 func _is_player_inside() -> bool:
 	for body in area_sign.get_overlapping_bodies():
-		if body.name == "Player": # ou use grupo se preferir
+		if body.name == "Player" or body.name == "Player2": # ou use grupo se preferir
 			return true
 	return false
 

@@ -11,7 +11,7 @@ func _ready() -> void:
 	color_rect.visible = false
 	label.visible = false
 
-	var timer = get_tree().create_timer(5.0)
+	var timer = get_tree().create_timer(2.0)
 	timer.timeout.connect(_on_timer_timeout)
 	if sound_path != "":
 		var sound = load(sound_path)
@@ -30,4 +30,4 @@ func _input(event: InputEvent) -> void:
 
 func change_to_next_scene() -> void:
 	if next_scene_path != "":
-		get_tree().change_scene_to_file(next_scene_path)
+		LoadManager.load_scene("res://ui/start_screen.tscn")
