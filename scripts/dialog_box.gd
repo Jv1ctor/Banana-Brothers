@@ -4,7 +4,6 @@ extends MarginContainer
 @onready var letter_timer_display: Timer = $Letter_timer_display
 
 const MAX_WIDTH = 256
-
 var text = ""
 var letter_index = 0
 

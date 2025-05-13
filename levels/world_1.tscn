@@ -127,7 +127,7 @@ position = Vector2(961, 430)
 [node name="warning_sign_orange" parent="orangeNpc" instance=ExtResource("19_ivm7e")]
 position = Vector2(-2, -30)
 text = "Olá, podem me ajudar?; Perdi meu balão, ele está muito alto para eu pegar sozinho.; Ele está acima das nuvens,; vocês podem usar as plataformas com os botões para chegar até lá.;"
-spacing = 256
+spacing = 60
 
 [node name="Player2" parent="." instance=ExtResource("1_umix3")]
 position = Vector2(951, 279)
