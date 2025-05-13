@@ -11,25 +11,31 @@ var lines: Array[String] = []
 var _is_player_in_area = false
 func _ready():
 	lines = _wrap_text(text, spacing)
-	print(get_parent())
+	
+	
+func _speech_separation(text:String):
+	return text.split(";")
 
 func _wrap_text(text: String, max_length: int) -> Array[String]:
-	var words = text.split(" ")
+	var speeches = _speech_separation(text)
 	var lines: Array[String] = [""]
-	var current_line = ""
+	
+	for speeche in speeches:
+		var words = speeche.split(" ")
+		var current_line = ""
 
-	for word in words:
-		if current_line.length() == 0:
-			current_line = word
-		elif (current_line.length() + word.length() + 1) <= max_length:
-			current_line += " " + word
-			lines.pop_back()
-		else:
-			current_line = word
+		for word in words:
+			if current_line.length() == 0:
+				current_line = word
+			elif (current_line.length() + word.length() + 1) <= max_length:
+				current_line += " " + word
+				lines.pop_back()
+			else:
+				current_line = word
 
-		if current_line.length() > 0:
-			lines.append(current_line)
-
+			if current_line.length() > 0:
+				lines.append(current_line)
+	print(lines)
 	return lines
 
 
