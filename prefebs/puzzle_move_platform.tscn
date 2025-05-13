@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://d2tdoqvl88i1f"]
 
-[ext_resource type="Script" uid="uid://cowy1v0erdxy6" path="res://scripts/puzzle_move_platform.gd" id="1_77okc"]
+[ext_resource type="Script" path="res://scripts/puzzle_move_platform.gd" id="1_77okc"]
 
 [node name="puzzle_move_platform" type="Node2D"]
 script = ExtResource("1_77okc")

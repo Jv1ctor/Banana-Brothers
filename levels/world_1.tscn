@@ -70,6 +70,7 @@ position = Vector2(11, -70)
 [node name="moving_platform11" parent="puzzle_move_platform" instance=ExtResource("3_6r8k1")]
 position = Vector2(-60, 45)
 scale = Vector2(1, 0.993852)
+move_speed = 1
 distance = 90
 moving_horizontal = false
 
@@ -125,17 +126,17 @@ position = Vector2(961, 430)
 
 [node name="warning_sign_orange" parent="orangeNpc" instance=ExtResource("19_ivm7e")]
 position = Vector2(-2, -30)
-text = "Olá, podem me ajudar? Perdi meu balão, ele está muito alto para eu pegar sozinho. Ele está acima das nuvens, vocês podem usar as plataformas com os botões para chegar até lá."
-spacing = 30
+text = "Olá, podem me ajudar?; Perdi meu balão, ele está muito alto para eu pegar sozinho.; Ele está acima das nuvens,; vocês podem usar as plataformas com os botões para chegar até lá.;"
+spacing = 256
 
 [node name="Player2" parent="." instance=ExtResource("1_umix3")]
-position = Vector2(1405, 33)
+position = Vector2(951, 279)
 collision_mask = 5
 controls = SubResource("Resource_7ab5j")
 texture = ExtResource("9_1qaao")
 
 [node name="Player" parent="." instance=ExtResource("1_umix3")]
-position = Vector2(1501, 172)
+position = Vector2(1047, 418)
 scale = Vector2(0.915753, 0.915753)
 collision_mask = 5
 controls = SubResource("Resource_3hl4r")

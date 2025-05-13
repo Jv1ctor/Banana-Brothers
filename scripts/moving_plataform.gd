@@ -10,7 +10,7 @@ const WAIT_DURATION = 1
 
 @onready var atlas_texture = $platform/Sprite2D.texture as AtlasTexture
 
-@export var move_speed = 3
+@export_range(1, 10) var move_speed = 3
 @export var distance = 192:
 	set(value):
 		distance = value
