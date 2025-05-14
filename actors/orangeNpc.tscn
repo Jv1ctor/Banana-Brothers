@@ -1,5 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://c1cx73f63f2yy"]
+[gd_scene load_steps=13 format=3 uid="uid://c1cx73f63f2yy"]
 
+[ext_resource type="Script" uid="uid://b4y8nkgwa7lr1" path="res://scripts/actors/orange.gd" id="1_i0cln"]
 [ext_resource type="Texture2D" uid="uid://bw1vjdso8js1b" path="res://assets/sprites/Orange/Idle (32 x 32).png" id="1_tb25d"]
 [ext_resource type="Texture2D" uid="uid://ctlr4npwdwe3a" path="res://assets/sprites/Orange/Blink (32 x 32).png" id="2_i0cln"]
 
@@ -54,9 +55,13 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bygls"]
-size = Vector2(18.25, 19.1207)
+size = Vector2(20.1986, 19.1207)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i0cln"]
+size = Vector2(71, 20)
 
 [node name="orangeNpc" type="CharacterBody2D"]
+script = ExtResource("1_i0cln")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -16)
@@ -67,6 +72,15 @@ frame_progress = 0.639381
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, -9.5)
+position = Vector2(-0.0321866, -9.5)
 scale = Vector2(0.993356, 0.889088)
 shape = SubResource("RectangleShape2D_bygls")
+
+[node name="zone" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="zone"]
+position = Vector2(-1, -9)
+shape = SubResource("RectangleShape2D_i0cln")
+
+[connection signal="body_entered" from="zone" to="." method="_on_zone_body_entered"]
+[connection signal="body_exited" from="zone" to="." method="_on_zone_body_exited"]

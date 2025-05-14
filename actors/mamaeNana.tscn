@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bf5lemtiuyq64"]
+[gd_scene load_steps=7 format=3 uid="uid://bf5lemtiuyq64"]
 
 [ext_resource type="Texture2D" uid="uid://d32se1yhah3fm" path="res://assets/sprites/MamaeNana/mamaeNanaPiscando_idle.png" id="1_f74ds"]
+[ext_resource type="Script" uid="uid://bxo7lry8wm8br" path="res://scripts/actors/mamae_nana.gd" id="1_wvrks"]
 [ext_resource type="Texture2D" uid="uid://dwnmn8gkgbr2f" path="res://assets/sprites/MamaeNana/mamaoNana_idle.png" id="2_wvrks"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1vpv2"]
@@ -20,7 +21,11 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bygls"]
 size = Vector2(18.25, 40.3702)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wvrks"]
+size = Vector2(71, 20)
+
 [node name="MamaeNana" type="CharacterBody2D"]
+script = ExtResource("1_wvrks")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -16)
@@ -34,3 +39,12 @@ flip_h = true
 position = Vector2(-1, -13.9463)
 scale = Vector2(0.993356, 0.889088)
 shape = SubResource("RectangleShape2D_bygls")
+
+[node name="zone" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="zone"]
+position = Vector2(-1, -9)
+shape = SubResource("RectangleShape2D_wvrks")
+
+[connection signal="body_entered" from="zone" to="." method="_on_zone_body_entered"]
+[connection signal="body_exited" from="zone" to="." method="_on_zone_body_exited"]

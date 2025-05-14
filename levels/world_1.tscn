@@ -117,7 +117,8 @@ position = Vector2(2082, 425)
 
 [node name="warning_sign_Nana" parent="MamaeNana" instance=ExtResource("19_ivm7e")]
 position = Vector2(0, -52)
-text = "Parabens meus filhos! Vocês ganharam um presente muito especial."
+text = "Parabens meus filhos!;
+Vocês ganharam um presente muito especial.;"
 spacing = 40
 npc_id = "mamae_nana"
 
@@ -130,13 +131,13 @@ text = "Olá, podem me ajudar?; Perdi meu balão, ele está muito alto para eu p
 spacing = 60
 
 [node name="Player2" parent="." instance=ExtResource("1_umix3")]
-position = Vector2(951, 279)
+position = Vector2(1834, 279)
 collision_mask = 5
 controls = SubResource("Resource_7ab5j")
 texture = ExtResource("9_1qaao")
 
 [node name="Player" parent="." instance=ExtResource("1_umix3")]
-position = Vector2(1047, 418)
+position = Vector2(1930, 418)
 scale = Vector2(0.915753, 0.915753)
 collision_mask = 5
 controls = SubResource("Resource_3hl4r")
