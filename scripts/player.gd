@@ -63,6 +63,7 @@ func handle_player_move(delta):
 			
 	#print(_current_state)
 	animated_sprite_2d.trigger_animation(velocity, direction, _current_state)
+	
 			
 
 func _physics_process(delta: float) -> void:	
@@ -73,3 +74,8 @@ func _physics_process(delta: float) -> void:
 	handle_player_move(delta)
 	
 	move_and_slide()
+
+	for platforms in get_slide_collision_count():
+		var collision = get_slide_collision(platforms)
+		if collision.get_collider().has_method("has_collided_with"):
+			collision.get_collider().has_collided_with(collision, self)

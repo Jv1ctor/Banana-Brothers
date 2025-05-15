@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://diacj6ghjhr3u"]
+[gd_scene load_steps=26 format=4 uid="uid://diacj6ghjhr3u"]
 
 [ext_resource type="Script" uid="uid://cidjk186gmigv" path="res://scripts/world_1.gd" id="1_4aspj"]
 [ext_resource type="TileSet" uid="uid://cvxcyvea8m57s" path="res://tile_maps/grassland.tres" id="1_tbfs4"]
@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://bf5lemtiuyq64" path="res://actors/mamaeNana.tscn" id="18_uc2ke"]
 [ext_resource type="PackedScene" uid="uid://cayhx3fnjdnr0" path="res://prefebs/warning_sign.tscn" id="19_ivm7e"]
 [ext_resource type="AudioStream" uid="uid://dy6x23dqh5oqw" path="res://sounds/leap.mp3" id="21_qx8j2"]
+[ext_resource type="PackedScene" uid="uid://d3xqpiwtfotnp" path="res://prefebs/falling_plataform.tscn" id="22_qieny"]
 
 [sub_resource type="Resource" id="Resource_7ab5j"]
 script = ExtResource("3_viyde")
@@ -165,6 +166,10 @@ stream = ExtResource("21_qx8j2")
 volume_db = -10.0
 autoplay = true
 
+[node name="falling-plataform" parent="." instance=ExtResource("22_qieny")]
+position = Vector2(1262, 283)
+scale = Vector2(1, 0.993852)
+
 [node name="Puzzle1" type="Node" parent="."]
 
 [node name="puzzle_move_platform" parent="Puzzle1" node_paths=PackedStringArray("button1Platform", "button2Platform", "platform") instance=ExtResource("15_rsm41")]
@@ -204,7 +209,6 @@ position = Vector2(115, -73)
 position = Vector2(94, 14)
 move_speed = 30
 distance = 80
-moving_horizontal = true
 invert_direction = true
 
 [node name="puzzle_move_platform3" parent="Puzzle1" node_paths=PackedStringArray("button1Platform", "button2Platform", "platform") instance=ExtResource("15_rsm41")]
@@ -218,7 +222,7 @@ position = Vector2(190, -24)
 
 [node name="moving_platform" parent="Puzzle1/puzzle_move_platform3" instance=ExtResource("3_6r8k1")]
 position = Vector2(37, -197)
-move_speed = 40
+move_speed = 35
 distance = 80
 moving_horizontal = false
 invert_direction = true
@@ -242,7 +246,6 @@ position = Vector2(19, -70)
 position = Vector2(-99, -34)
 move_speed = 1
 distance = 80
-moving_horizontal = true
 invert_direction = true
 
 [node name="puzzle_move_platform5" parent="Puzzle2" node_paths=PackedStringArray("button1Platform", "button2Platform", "platform") instance=ExtResource("15_rsm41")]
@@ -278,5 +281,4 @@ position = Vector2(279, -220)
 position = Vector2(230, -74)
 move_speed = 1
 distance = 110
-moving_horizontal = true
 invert_direction = true

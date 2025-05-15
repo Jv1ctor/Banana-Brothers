@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://olw6f6e3a4sx" path="res://scripts/moving_plataform.gd" id="1_44j83"]
 [ext_resource type="Texture2D" uid="uid://bh8x06ivvtt7p" path="res://assets/sprites/platforms/yellow.png" id="2_44j83"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_dgg34"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_5g0qu"]
 atlas = ExtResource("2_44j83")
 region = Rect2(96, 64, 32, 16)
 
@@ -12,15 +12,12 @@ size = Vector2(32, 16)
 
 [node name="moving_platform" type="Node2D"]
 script = ExtResource("1_44j83")
-move_speed = null
-distance = null
-moving_horizontal = null
 
 [node name="platform" type="AnimatableBody2D" parent="."]
 collision_layer = 4
 
 [node name="Sprite2D" type="Sprite2D" parent="platform"]
-texture = SubResource("AtlasTexture_dgg34")
+texture = SubResource("AtlasTexture_5g0qu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="platform"]
 shape = SubResource("RectangleShape2D_gkucu")
