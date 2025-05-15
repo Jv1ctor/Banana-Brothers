@@ -76,13 +76,13 @@ text = "Olá, podem me ajudar?; Perdi meu balão, ele está muito alto para eu p
 spacing = 60
 
 [node name="Player2" parent="." instance=ExtResource("1_umix3")]
-position = Vector2(2647, 428)
+position = Vector2(1034, 419)
 collision_mask = 5
 controls = SubResource("Resource_7ab5j")
 texture = ExtResource("9_1qaao")
 
 [node name="Player" parent="." instance=ExtResource("1_umix3")]
-position = Vector2(2674, 427)
+position = Vector2(1161, 427)
 scale = Vector2(0.915753, 0.915753)
 collision_mask = 5
 controls = SubResource("Resource_3hl4r")
@@ -165,6 +165,64 @@ stream = ExtResource("21_qx8j2")
 volume_db = -10.0
 autoplay = true
 
+[node name="Puzzle1" type="Node" parent="."]
+
+[node name="puzzle_move_platform" parent="Puzzle1" node_paths=PackedStringArray("button1Platform", "button2Platform", "platform") instance=ExtResource("15_rsm41")]
+position = Vector2(1287, 319)
+button1Platform = NodePath("Button")
+button2Platform = NodePath("Button2")
+platform = NodePath("moving_platform11")
+colorTheme = "green"
+
+[node name="Button" parent="Puzzle1/puzzle_move_platform" instance=ExtResource("4_hclqf")]
+position = Vector2(-185, 57)
+
+[node name="Button2" parent="Puzzle1/puzzle_move_platform" instance=ExtResource("4_hclqf")]
+position = Vector2(11, -70)
+
+[node name="moving_platform11" parent="Puzzle1/puzzle_move_platform" instance=ExtResource("3_6r8k1")]
+position = Vector2(-60, 45)
+scale = Vector2(1, 0.993852)
+move_speed = 10
+distance = 90
+moving_horizontal = false
+
+[node name="puzzle_move_platform2" parent="Puzzle1" node_paths=PackedStringArray("button1Platform", "button2Platform", "platform") instance=ExtResource("15_rsm41")]
+position = Vector2(1369, 241)
+button1Platform = NodePath("Button")
+button2Platform = NodePath("Button2")
+platform = NodePath("moving_platform")
+colorTheme = "yellow"
+
+[node name="Button" parent="Puzzle1/puzzle_move_platform2" instance=ExtResource("4_hclqf")]
+position = Vector2(-215, -9)
+
+[node name="Button2" parent="Puzzle1/puzzle_move_platform2" instance=ExtResource("4_hclqf")]
+position = Vector2(115, -73)
+
+[node name="moving_platform" parent="Puzzle1/puzzle_move_platform2" instance=ExtResource("3_6r8k1")]
+position = Vector2(94, 14)
+move_speed = 30
+distance = 80
+moving_horizontal = true
+invert_direction = true
+
+[node name="puzzle_move_platform3" parent="Puzzle1" node_paths=PackedStringArray("button1Platform", "button2Platform", "platform") instance=ExtResource("15_rsm41")]
+position = Vector2(1369, 241)
+button1Platform = NodePath("Button")
+button2Platform = NodePath("Button")
+platform = NodePath("moving_platform")
+
+[node name="Button" parent="Puzzle1/puzzle_move_platform3" instance=ExtResource("4_hclqf")]
+position = Vector2(190, -24)
+
+[node name="moving_platform" parent="Puzzle1/puzzle_move_platform3" instance=ExtResource("3_6r8k1")]
+position = Vector2(37, -197)
+move_speed = 40
+distance = 80
+moving_horizontal = false
+invert_direction = true
+
 [node name="Puzzle2" type="Node" parent="."]
 
 [node name="puzzle_move_platform4" parent="Puzzle2" node_paths=PackedStringArray("button1Platform", "button2Platform", "platform") instance=ExtResource("15_rsm41")]
@@ -221,62 +279,4 @@ position = Vector2(230, -74)
 move_speed = 1
 distance = 110
 moving_horizontal = true
-invert_direction = true
-
-[node name="Puzzle1" type="Node" parent="."]
-
-[node name="puzzle_move_platform" parent="Puzzle1" node_paths=PackedStringArray("button1Platform", "button2Platform", "platform") instance=ExtResource("15_rsm41")]
-position = Vector2(1287, 319)
-button1Platform = NodePath("Button")
-button2Platform = NodePath("Button2")
-platform = NodePath("moving_platform11")
-colorTheme = "green"
-
-[node name="Button" parent="Puzzle1/puzzle_move_platform" instance=ExtResource("4_hclqf")]
-position = Vector2(-185, 57)
-
-[node name="Button2" parent="Puzzle1/puzzle_move_platform" instance=ExtResource("4_hclqf")]
-position = Vector2(11, -70)
-
-[node name="moving_platform11" parent="Puzzle1/puzzle_move_platform" instance=ExtResource("3_6r8k1")]
-position = Vector2(-60, 45)
-scale = Vector2(1, 0.993852)
-move_speed = 1
-distance = 90
-moving_horizontal = false
-
-[node name="puzzle_move_platform2" parent="Puzzle1" node_paths=PackedStringArray("button1Platform", "button2Platform", "platform") instance=ExtResource("15_rsm41")]
-position = Vector2(1369, 241)
-button1Platform = NodePath("Button")
-button2Platform = NodePath("Button2")
-platform = NodePath("moving_platform")
-colorTheme = "yellow"
-
-[node name="Button" parent="Puzzle1/puzzle_move_platform2" instance=ExtResource("4_hclqf")]
-position = Vector2(-215, -9)
-
-[node name="Button2" parent="Puzzle1/puzzle_move_platform2" instance=ExtResource("4_hclqf")]
-position = Vector2(115, -73)
-
-[node name="moving_platform" parent="Puzzle1/puzzle_move_platform2" instance=ExtResource("3_6r8k1")]
-position = Vector2(94, 14)
-move_speed = 1
-distance = 80
-moving_horizontal = true
-invert_direction = true
-
-[node name="puzzle_move_platform3" parent="Puzzle1" node_paths=PackedStringArray("button1Platform", "button2Platform", "platform") instance=ExtResource("15_rsm41")]
-position = Vector2(1369, 241)
-button1Platform = NodePath("Button")
-button2Platform = NodePath("Button")
-platform = NodePath("moving_platform")
-
-[node name="Button" parent="Puzzle1/puzzle_move_platform3" instance=ExtResource("4_hclqf")]
-position = Vector2(190, -24)
-
-[node name="moving_platform" parent="Puzzle1/puzzle_move_platform3" instance=ExtResource("3_6r8k1")]
-position = Vector2(37, -197)
-move_speed = 1
-distance = 80
-moving_horizontal = false
 invert_direction = true
