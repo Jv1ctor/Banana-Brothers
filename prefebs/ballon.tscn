@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://qtti446tw7fq" path="res://scripts/ballon.gd" id="1_0b4ph"]
 [ext_resource type="Texture2D" uid="uid://nwcewt1t1l8c" path="res://assets/sprites/Mini FX, Items & UI/Common Pick-ups/4 - Ballooney_Flying (32 x 32).png" id="1_8coqw"]
-[ext_resource type="AudioStream" uid="uid://cw5wl5g6y4u5y" path="res://sounds/balao.wav" id="3_prc0n"]
+[ext_resource type="AudioStream" uid="uid://cw5wl5g6y4u5y" path="res://sounds/Picked Coin Echo.wav" id="3_prc0n"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0b4ph"]
 atlas = ExtResource("1_8coqw")
