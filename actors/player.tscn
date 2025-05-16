@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dvrkea3u7ncpo"]
+[gd_scene load_steps=6 format=3 uid="uid://dvrkea3u7ncpo"]
 
 [ext_resource type="Script" uid="uid://drxf7t4ywolhf" path="res://scripts/player.gd" id="1_fkmo6"]
 [ext_resource type="SpriteFrames" uid="uid://cgxwam7vtisj7" path="res://texture/playerPratinha.tres" id="2_1yqc4"]
+[ext_resource type="AudioStream" uid="uid://fptyovqn7ccx" path="res://sounds/jump.mp3" id="4_esgq3"]
 [ext_resource type="Script" uid="uid://dvqargt2chima" path="res://scripts/switch_animation.gd" id="4_fkmo6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bygls"]
@@ -19,3 +20,6 @@ script = ExtResource("4_fkmo6")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1.75, -16)
 shape = SubResource("RectangleShape2D_bygls")
+
+[node name="AudioJump" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_esgq3")
