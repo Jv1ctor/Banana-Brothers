@@ -1,17 +1,17 @@
 [gd_scene load_steps=7 format=3 uid="uid://dkfu5gjqxs8tn"]
 
 [ext_resource type="Script" uid="uid://bb60e6vcq4jyr" path="res://scripts/npc.gd" id="1_8suc3"]
-[ext_resource type="Texture2D" uid="uid://db6ymthxpg5ro" path="res://assets/sprites/watermelo_character/idle1.png" id="2_vv727"]
-[ext_resource type="Texture2D" uid="uid://cdy12vpwnha8m" path="res://assets/sprites/watermelo_character/idle_blinking.png" id="3_gsbbd"]
+[ext_resource type="Texture2D" uid="uid://d0ds0d5yv56bf" path="res://assets/sprites/watermelo_character/cute_watermelon_still.png" id="2_237xj"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_1vpv2"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ykvy"]
+atlas = ExtResource("2_237xj")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d5tk7"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_vv727")
-}, {
-"duration": 2.0,
-"texture": ExtResource("3_gsbbd")
+"texture": SubResource("AtlasTexture_1ykvy")
 }],
 "loop": true,
 "name": &"idle",
@@ -22,7 +22,7 @@ animations = [{
 size = Vector2(20.1986, 19.1207)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i0cln"]
-size = Vector2(71, 20)
+size = Vector2(42, 20)
 
 [node name="watermeloNpc" type="CharacterBody2D"]
 script = ExtResource("1_8suc3")
@@ -30,11 +30,10 @@ count_condition = "chocolate"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -10)
-scale = Vector2(0.0301471, 0.0301471)
-sprite_frames = SubResource("SpriteFrames_1vpv2")
+sprite_frames = SubResource("SpriteFrames_d5tk7")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.495801
+frame_progress = 0.0313024
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -45,7 +44,7 @@ shape = SubResource("RectangleShape2D_bygls")
 [node name="zone" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="zone"]
-position = Vector2(-1, -9)
+position = Vector2(0, -9)
 shape = SubResource("RectangleShape2D_i0cln")
 
 [connection signal="body_entered" from="zone" to="." method="_on_zone_body_entered"]

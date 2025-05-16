@@ -80,7 +80,7 @@ func executar_botao():
 			exit_button.pressed.emit()
 
 func _on_start_button_pressed() -> void:
-	LoadManager.load_scene("res://levels//world_1.tscn")
+	LoadManager.load_scene("res://ui//history.tscn")
 
 func _on_exit_button_pressed() -> void:
 	get_tree().quit()

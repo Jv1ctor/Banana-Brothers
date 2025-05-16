@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://c0anqy7ytfosb" path="res://assets/sprites/Seasonal Tilesets/1 - Grassland/Background parts/4 - Cloud_cover_2.png" id="5_bx18w"]
 [ext_resource type="PackedScene" uid="uid://bhspt3keawxkj" path="res://actors/barryNpc.tscn" id="5_lmqqd"]
 [ext_resource type="Shader" uid="uid://hbort3oonugk" path="res://shaders/clouds.gdshader" id="6_8f4wj"]
+[ext_resource type="PackedScene" uid="uid://dkfu5gjqxs8tn" path="res://actors/watermelo_npc.tscn" id="6_lmqqd"]
 [ext_resource type="Texture2D" uid="uid://c050r4k6h7rvs" path="res://assets/sprites/Seasonal Tilesets/1 - Grassland/Background parts/3 - Cloud_cover_1.png" id="6_xpxyj"]
 [ext_resource type="PackedScene" uid="uid://c1cx73f63f2yy" path="res://actors/orangeNpc.tscn" id="7_1jfbe"]
 [ext_resource type="Texture2D" uid="uid://cgobc00cxpckg" path="res://assets/sprites/Seasonal Tilesets/1 - Grassland/Background parts/2 - Hills.png" id="7_8f4wj"]
@@ -25,7 +26,6 @@
 [ext_resource type="AudioStream" uid="uid://dy6x23dqh5oqw" path="res://sounds/leap.mp3" id="21_qx8j2"]
 [ext_resource type="PackedScene" uid="uid://p2fw0nijwse8" path="res://prefebs/falling_plataform.tscn" id="22_qieny"]
 [ext_resource type="PackedScene" uid="uid://q8m8nyrjtvja" path="res://ui/hud.tscn" id="23_0wv4g"]
-[ext_resource type="PackedScene" uid="uid://tgp2ifcqi70w" path="res://actors/watermelon_npc.tscn" id="26_lmqqd"]
 
 [sub_resource type="Resource" id="Resource_7ab5j"]
 script = ExtResource("3_viyde")
@@ -65,13 +65,12 @@ position = Vector2(2477, 104)
 [node name="ballon" parent="." instance=ExtResource("13_thqsu")]
 position = Vector2(1317, 77)
 
-[node name="WatermelonNpc" parent="." instance=ExtResource("26_lmqqd")]
-position = Vector2(3658, 339)
-scale = Vector2(0.0524788, 0.0415984)
+[node name="watermeloNpc" parent="." instance=ExtResource("6_lmqqd")]
+position = Vector2(3666, 349)
+final_text = "Ahh muito obrigado meninos...;"
 
-[node name="warning_sign" parent="WatermelonNpc" instance=ExtResource("19_ivm7e")]
-position = Vector2(-19.0555, -649.065)
-scale = Vector2(19.4483, 22.6036)
+[node name="warning_sign" parent="watermeloNpc" instance=ExtResource("19_ivm7e")]
+position = Vector2(-2, -32)
 text = "Perdi meu chocolate enquanto descia o morro...; vocês podem buscar pra mim? "
 spacing = 256
 
@@ -107,13 +106,13 @@ text = "Olá, podem me ajudar?; Perdi meu balão, ele está muito alto para eu p
 spacing = 256
 
 [node name="Player2" parent="." instance=ExtResource("1_umix3")]
-position = Vector2(4950, -97)
+position = Vector2(3615, 332)
 collision_mask = 5
 controls = SubResource("Resource_7ab5j")
 texture = ExtResource("9_1qaao")
 
 [node name="Player" parent="." instance=ExtResource("1_umix3")]
-position = Vector2(4948, -68)
+position = Vector2(3639, 270)
 scale = Vector2(0.915753, 0.915753)
 collision_mask = 5
 controls = SubResource("Resource_3hl4r")
@@ -195,6 +194,7 @@ centered = false
 stream = ExtResource("21_qx8j2")
 volume_db = -10.0
 autoplay = true
+parameters/looping = true
 
 [node name="falling-plataform" parent="." instance=ExtResource("22_qieny")]
 position = Vector2(1262, 283)
