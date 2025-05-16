@@ -25,6 +25,7 @@ size = Vector2(20.1986, 19.1207)
 size = Vector2(42, 20)
 
 [node name="watermeloNpc" type="CharacterBody2D"]
+collision_layer = 8
 script = ExtResource("1_8suc3")
 count_condition = "chocolate"
 
@@ -42,6 +43,7 @@ scale = Vector2(0.993356, 0.889088)
 shape = SubResource("RectangleShape2D_bygls")
 
 [node name="zone" type="Area2D" parent="."]
+collision_layer = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="zone"]
 position = Vector2(0, -9)

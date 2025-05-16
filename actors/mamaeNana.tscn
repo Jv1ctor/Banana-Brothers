@@ -25,6 +25,7 @@ size = Vector2(18.25, 40.3702)
 size = Vector2(71, 20)
 
 [node name="MamaeNana" type="CharacterBody2D"]
+collision_layer = 8
 script = ExtResource("1_wvrks")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -41,6 +42,7 @@ scale = Vector2(0.993356, 0.889088)
 shape = SubResource("RectangleShape2D_bygls")
 
 [node name="zone" type="Area2D" parent="."]
+collision_layer = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="zone"]
 position = Vector2(-1, -9)
