@@ -77,10 +77,11 @@ spacing = 256
 
 [node name="MamaeNana" parent="." instance=ExtResource("18_uc2ke")]
 position = Vector2(3241, 425)
+count_condition = "good_deeds"
 final_text = "Parabens meus filhos!;
 Vocês ganharam um presente muito especial.;"
 
-[node name="warning_sign_Nana" parent="MamaeNana" instance=ExtResource("19_ivm7e")]
+[node name="warning_sign" parent="MamaeNana" instance=ExtResource("19_ivm7e")]
 position = Vector2(0, -52)
 text = "Façam boas ações e serão recompensados...;"
 spacing = 256
@@ -89,8 +90,8 @@ npc_id = "mamae_nana"
 [node name="orangeNpc" parent="." instance=ExtResource("7_1jfbe")]
 position = Vector2(961, 430)
 
-[node name="warning_sign_orange" parent="orangeNpc" instance=ExtResource("19_ivm7e")]
-position = Vector2(-2, -30)
+[node name="warning_sign" parent="orangeNpc" instance=ExtResource("19_ivm7e")]
+position = Vector2(1, -31)
 text = "Olá, podem me ajudar?; Perdi meu balão, ele está muito alto para eu pegar sozinho.; Ele está acima das nuvens,; vocês podem usar as plataformas com os botões para chegar até lá.;"
 spacing = 256
 
