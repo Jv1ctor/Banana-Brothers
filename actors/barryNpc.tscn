@@ -1,0 +1,80 @@
+[gd_scene load_steps=12 format=3 uid="uid://bhspt3keawxkj"]
+
+[ext_resource type="Script" uid="uid://bb60e6vcq4jyr" path="res://scripts/npc.gd" id="1_6xn6f"]
+[ext_resource type="Texture2D" uid="uid://b87fmjok5iki8" path="res://assets/sprites/Barry Cherry/Idle (32 x 32).png" id="4_l51fv"]
+[ext_resource type="Texture2D" uid="uid://dnuu6fkpcqwnr" path="res://assets/sprites/Barry Cherry/Idle_Blink (32 x 32).png" id="5_bujn8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i36fw"]
+atlas = ExtResource("4_l51fv")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4gcpw"]
+atlas = ExtResource("4_l51fv")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pe4sq"]
+atlas = ExtResource("4_l51fv")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0pesy"]
+atlas = ExtResource("4_l51fv")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l51fv"]
+atlas = ExtResource("5_bujn8")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1vpv2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i36fw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4gcpw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pe4sq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0pesy")
+}, {
+"duration": 1.79,
+"texture": SubResource("AtlasTexture_l51fv")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bygls"]
+size = Vector2(20.1986, 19.1207)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i0cln"]
+size = Vector2(71, 20)
+
+[node name="barryNpc" type="CharacterBody2D"]
+script = ExtResource("1_6xn6f")
+count_condition = "cake"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -16)
+sprite_frames = SubResource("SpriteFrames_1vpv2")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.639381
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.0321866, -9.5)
+scale = Vector2(0.993356, 0.889088)
+shape = SubResource("RectangleShape2D_bygls")
+
+[node name="zone" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="zone"]
+position = Vector2(-1, -9)
+shape = SubResource("RectangleShape2D_i0cln")
+
+[connection signal="body_entered" from="zone" to="." method="_on_zone_body_entered"]
+[connection signal="body_exited" from="zone" to="." method="_on_zone_body_exited"]
