@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://c1cx73f63f2yy"]
 
-[ext_resource type="Script" uid="uid://b4y8nkgwa7lr1" path="res://scripts/actors/orange.gd" id="1_i0cln"]
+[ext_resource type="Script" uid="uid://bb60e6vcq4jyr" path="res://scripts/npc.gd" id="1_i0cln"]
 [ext_resource type="Texture2D" uid="uid://bw1vjdso8js1b" path="res://assets/sprites/Orange/Idle (32 x 32).png" id="1_tb25d"]
 [ext_resource type="Texture2D" uid="uid://ctlr4npwdwe3a" path="res://assets/sprites/Orange/Blink (32 x 32).png" id="2_i0cln"]
 

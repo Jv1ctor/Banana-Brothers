@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://bf5lemtiuyq64"]
 
 [ext_resource type="Texture2D" uid="uid://d32se1yhah3fm" path="res://assets/sprites/MamaeNana/mamaeNanaPiscando_idle.png" id="1_f74ds"]
-[ext_resource type="Script" uid="uid://bxo7lry8wm8br" path="res://scripts/actors/mamae_nana.gd" id="1_wvrks"]
+[ext_resource type="Script" uid="uid://bb60e6vcq4jyr" path="res://scripts/npc.gd" id="1_wvrks"]
 [ext_resource type="Texture2D" uid="uid://dwnmn8gkgbr2f" path="res://assets/sprites/MamaeNana/mamaoNana_idle.png" id="2_wvrks"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1vpv2"]

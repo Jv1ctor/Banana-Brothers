@@ -18,7 +18,8 @@ config/icon="res://icon.svg"
 [autoload]
 
 DialogManager="*res://singleton/dialog_manager.gd"
-LoadManager="*res://scripts/loadManager.gd"
+LoadManager="*res://singleton/loadManager.gd"
+Globals="*res://singleton/globals.gd"
 
 [display]
 

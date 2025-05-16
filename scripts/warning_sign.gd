@@ -1,5 +1,7 @@
 extends Node2D
 
+class_name Warning_sign
+
 @onready var texture: Sprite2D = $texture
 @onready var area_sign: Area2D = $Area_sign
 
@@ -9,6 +11,13 @@ extends Node2D
 
 var lines: Array[String] = []
 var _is_player_in_area = false
+
+
+func set_text(new_text: String) -> void:
+	text = new_text
+	lines = _wrap_text(text, spacing)
+
+
 func _ready():
 	lines = _wrap_text(text, spacing)
 	
@@ -35,7 +44,6 @@ func _wrap_text(text: String, max_length: int) -> Array[String]:
 
 			if current_line.length() > 0:
 				lines.append(current_line)
-	print(lines)
 	return lines
 
 
@@ -52,6 +60,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		if (event.is_action_pressed("p1_ui_action") or event.is_action_pressed("p2_ui_action")) \
 			and !DialogManager.is_message_active:
 			
+			print(lines)
 			texture.hide()
 			DialogManager.start_message(global_position + Vector2(0, -50), lines, npc_id)
 	else:

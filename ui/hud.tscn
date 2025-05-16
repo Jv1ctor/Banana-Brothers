@@ -1,0 +1,102 @@
+[gd_scene load_steps=10 format=3 uid="uid://q8m8nyrjtvja"]
+
+[ext_resource type="Script" uid="uid://bsi6j235ughgk" path="res://scripts/hud.gd" id="1_546lt"]
+[ext_resource type="Texture2D" uid="uid://nwcewt1t1l8c" path="res://assets/sprites/Mini FX, Items & UI/Common Pick-ups/4 - Ballooney_Flying (32 x 32).png" id="1_rbyyf"]
+[ext_resource type="FontFile" uid="uid://dewrmkwdjxs34" path="res://fonts/Minecraft.ttf" id="2_en2x2"]
+[ext_resource type="Texture2D" uid="uid://c60rhpdk50n8c" path="res://assets/sprites/Mini FX, Items & UI/Food Items/Cake_Slices (16 x 16).png" id="4_en2x2"]
+[ext_resource type="Texture2D" uid="uid://louxyikrgxwl" path="res://assets/sprites/Mini FX, Items & UI/Food Items/Chocolate_Bars (16 x 16).png" id="5_1v5rv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_276te"]
+atlas = ExtResource("1_rbyyf")
+region = Rect2(41, 2, 14, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_546lt"]
+atlas = SubResource("AtlasTexture_276te")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q43x7"]
+atlas = ExtResource("4_en2x2")
+region = Rect2(2, 4, 12, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_srpbi"]
+atlas = ExtResource("5_1v5rv")
+region = Rect2(20, 2, 9, 14)
+
+[node name="HUD" type="CanvasLayer"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_546lt")
+
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -100.0
+offset_bottom = 124.0
+grow_horizontal = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(40, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+alignment = 1
+
+[node name="pointBallon" type="Label" parent="Control/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_en2x2")
+theme_override_font_sizes/font_size = 26
+text = "0"
+
+[node name="Texture" type="TextureRect" parent="Control/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_546lt")
+expand_mode = 3
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Control/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+alignment = 1
+
+[node name="pointCake" type="Label" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_en2x2")
+theme_override_font_sizes/font_size = 26
+text = "0"
+
+[node name="Texture" type="TextureRect" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_q43x7")
+expand_mode = 3
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Control/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+alignment = 1
+
+[node name="pointChocolate" type="Label" parent="Control/MarginContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_en2x2")
+theme_override_font_sizes/font_size = 26
+text = "0"
+
+[node name="Texture" type="TextureRect" parent="Control/MarginContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_srpbi")
+expand_mode = 3

@@ -12,6 +12,7 @@ var is_message_active := false
 var can_advance_message := false
 
 var current_npc_id: String = ""
+var max_points = 3
 
 func start_message(position: Vector2, lines: Array[String], npc_id: String = ""):
 	if is_message_active:
@@ -46,8 +47,8 @@ func _unhandled_input(event: InputEvent) -> void:
 		if current_line >= message_lines.size():
 			is_message_active = false
 			current_line = 1
-			
-			if current_npc_id == "mamae_nana":
+		
+			if current_npc_id == "mamae_nana" and Globals.final:
 				get_tree().change_scene_to_file("res://ui/final_screen.tscn")	
 			
 			return

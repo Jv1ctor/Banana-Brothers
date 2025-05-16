@@ -4,6 +4,7 @@ extends Node2D
 @export var sound_path: String = "res://sounds/startMusic.mp3"
 
 func _ready() -> void:
+	Globals.reset()
 	if sound_path != "":
 		var sound = load(sound_path)
 		if sound:
