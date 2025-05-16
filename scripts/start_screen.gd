@@ -14,6 +14,7 @@ var cooldown = 0.2
 var tempo_espera = 0.0
 
 func _ready() -> void:
+	Globals.reset()
 	if sound_path != "":
 		var sound = load(sound_path)
 		if sound:
