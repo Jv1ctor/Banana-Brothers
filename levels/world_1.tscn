@@ -165,6 +165,7 @@ centered = false
 stream = ExtResource("21_qx8j2")
 volume_db = -10.0
 autoplay = true
+parameters/looping = true
 
 [node name="falling-plataform" parent="." instance=ExtResource("22_qieny")]
 position = Vector2(1262, 283)
