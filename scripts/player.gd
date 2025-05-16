@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 class_name Player
+@onready var audio_jump: AudioStreamPlayer2D = $AudioJump
 
 @export var controls: PlayerControls = null
 @export var texture: SpriteFrames = null
@@ -33,6 +34,7 @@ func handle_player_move(delta):
 				_set_state(State.stopping)
 			
 			if Input.is_action_just_pressed(controls.jump) and is_on_floor():
+				audio_jump.play()
 				_set_state(State.jump)
 			#elif not is_on_floor():
 				#_set_state(State.fall)
@@ -40,6 +42,7 @@ func handle_player_move(delta):
 			velocity.x = direction * SPEED
 			
 			if Input.is_action_just_pressed(controls.jump) and is_on_floor():
+				audio_jump.play()
 				_set_state(State.jump)
 			#elif not is_on_floor():
 				#_set_state(State.fall)
