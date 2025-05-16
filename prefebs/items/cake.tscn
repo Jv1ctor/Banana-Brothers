@@ -42,3 +42,4 @@ stream = ExtResource("3_ans3x")
 volume_db = 24.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="finished" from="CollectAudio" to="." method="_on_collect_audio_finished"]

@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://cwujg3fjbdmfh"]
+[gd_scene load_steps=14 format=3 uid="uid://cwujg3fjbdmfh"]
 
 [ext_resource type="Script" uid="uid://cj4qoyoqnt8f6" path="res://scripts/button.gd" id="1_syjat"]
 [ext_resource type="Texture2D" uid="uid://b0n7uuud8j4o1" path="res://assets/sprites/Pixel UI pack 3/00.png" id="2_cypy6"]
+[ext_resource type="AudioStream" uid="uid://dx5ftorx4d4lm" path="res://sounds/button.mp3" id="3_links"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3fqak"]
 atlas = ExtResource("2_cypy6")
@@ -114,6 +115,10 @@ animation = &"unpressed_blue"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_b2cy7")
+
+[node name="AudioButton" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_links")
+volume_db = 24.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

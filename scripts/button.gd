@@ -1,6 +1,7 @@
 extends Area2D
 
 class_name ButtonPlatform
+@onready var audio_button: AudioStreamPlayer2D = $AudioButton
 
 @onready var animated_sprite = $AnimatedSprite2D
 var is_inside = false
@@ -16,6 +17,7 @@ func _ready():
 func _on_body_entered(body):
 	if is_instance_of(body, Player):
 		is_inside = true
+		audio_button.play()
 		#print("Player1 entrou na área!")
 		animated_sprite.play("pressed_{color}".format({ "color": colorBtn }))
 
