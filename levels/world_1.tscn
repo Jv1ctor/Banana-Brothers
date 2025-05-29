@@ -200,10 +200,6 @@ volume_db = -10.0
 autoplay = true
 parameters/looping = true
 
-[node name="falling-plataform" parent="." instance=ExtResource("22_qieny")]
-position = Vector2(1262, 283)
-scale = Vector2(1, 0.993852)
-
 [node name="Puzzle1" type="Node" parent="."]
 
 [node name="puzzle_move_platform" parent="Puzzle1" node_paths=PackedStringArray("button1Platform", "button2Platform", "platform") instance=ExtResource("15_rsm41")]
